@@ -1,1 +1,1 @@
-include ':demo', ':base_database', ':base_utils', ':base_api', ':base_mvp', ':base_ui', ':base_common'
+include ':demo', ':base_database', ':base_utils', ':base_api', ':base_ui', ':base_common'

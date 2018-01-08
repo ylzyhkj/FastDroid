@@ -31,7 +31,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':base_database')
-    implementation project(':base_mvp')
     implementation project(':base_utils')
     implementation project(':base_ui')
 }
