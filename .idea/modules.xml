@@ -10,9 +10,6 @@
       <module fileurl="file://$PROJECT_DIR$/base_ui/base_ui.iml" filepath="$PROJECT_DIR$/base_ui/base_ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/base_utils/base_utils.iml" filepath="$PROJECT_DIR$/base_utils/base_utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
-      <module fileurl="file://D:\demo\FastDroid\base_api\module_api.iml" filepath="D:\demo\FastDroid\base_api\module_api.iml" />
-      <module fileurl="file://D:\demo\FastDroid\base_mvp\module_mvp.iml" filepath="D:\demo\FastDroid\base_mvp\module_mvp.iml" />
-      <module fileurl="file://D:\demo\FastDroid\base_utils\module_utils.iml" filepath="D:\demo\FastDroid\base_utils\module_utils.iml" />
     </modules>
   </component>
 </project>
