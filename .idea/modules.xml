@@ -3,12 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FastDroid.iml" filepath="$PROJECT_DIR$/FastDroid.iml" />
-      <module fileurl="file://$PROJECT_DIR$/base_api/base_api.iml" filepath="$PROJECT_DIR$/base_api/base_api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/base_common/base_common.iml" filepath="$PROJECT_DIR$/base_common/base_common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/base_database/base_database.iml" filepath="$PROJECT_DIR$/base_database/base_database.iml" />
-      <module fileurl="file://$PROJECT_DIR$/base_ui/base_ui.iml" filepath="$PROJECT_DIR$/base_ui/base_ui.iml" />
-      <module fileurl="file://$PROJECT_DIR$/base_utils/base_utils.iml" filepath="$PROJECT_DIR$/base_utils/base_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/base_api.iml" filepath="$PROJECT_DIR$/api/base_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/database/base_database.iml" filepath="$PROJECT_DIR$/database/base_database.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ui/ui.iml" filepath="$PROJECT_DIR$/ui/ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/utils/base_utils.iml" filepath="$PROJECT_DIR$/utils/base_utils.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.github.JAYAndroid'
+
+def fastdroid_android = rootProject.ext.fastdroid_android
+def fastdroid_dependencies = rootProject.ext.fastdroid_dependencies
+
+android {
+    compileSdkVersion fastdroid_android.compileSdkVersion
+    buildToolsVersion fastdroid_android.buildToolsVersion
+
+    compileOptions {
+        targetCompatibility fastdroid_android.javaVersion
+        sourceCompatibility fastdroid_android.javaVersion
+    }
+
+    defaultConfig {
+        multiDexEnabled true
+        minSdkVersion fastdroid_android.minSdkVersion
+        targetSdkVersion fastdroid_android.targetSdkVersion
+        versionCode fastdroid_android.versionCode
+        versionName fastdroid_android.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api(fastdroid_dependencies.appcompatV7) {
+        exclude module: "support-annotations"
+    }
+
+    api(fastdroid_dependencies.support_v4) {
+        exclude module: "support-annotations"
+    }
+
+    api fastdroid_dependencies.annotations
+
+    api(fastdroid_dependencies.permissionsdispatcher) {
+        exclude module: "support-v13"
+    }
+
+
+    api fastdroid_dependencies.rxjava2
+    api fastdroid_dependencies.rxjava2_android
+    api fastdroid_dependencies.rxlifecycle2
+    api fastdroid_dependencies.rxlifecycle2_components
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    annotationProcessor fastdroid_dependencies.permissionsdispatcher_processor
+}
