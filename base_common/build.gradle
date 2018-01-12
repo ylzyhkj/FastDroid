@@ -1,20 +1,23 @@
 apply plugin: 'com.android.library'
 
+def fastdroid_android = rootProject.ext.fastdroid_android
+def fastdroid_dependencies = rootProject.ext.fastdroid_dependencies
+
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion fastdroid_android.compileSdkVersion
+    buildToolsVersion fastdroid_android.buildToolsVersion
 
     compileOptions {
-        targetCompatibility rootProject.ext.android.javaVersion
-        sourceCompatibility rootProject.ext.android.javaVersion
+        targetCompatibility fastdroid_android.javaVersion
+        sourceCompatibility fastdroid_android.javaVersion
     }
 
     defaultConfig {
         multiDexEnabled true
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        minSdkVersion fastdroid_android.minSdkVersion
+        targetSdkVersion fastdroid_android.targetSdkVersion
+        versionCode fastdroid_android.versionCode
+        versionName fastdroid_android.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -31,29 +34,29 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api(rootProject.ext.dependencies.appcompatV7) {
+    api(fastdroid_dependencies.appcompatV7) {
         exclude module: "support-annotations"
     }
 
-    api(rootProject.ext.dependencies.support_v4) {
+    api(fastdroid_dependencies.support_v4) {
         exclude module: "support-annotations"
     }
 
-    api rootProject.ext.dependencies.annotations
+    api fastdroid_dependencies.annotations
 
-    api(rootProject.ext.dependencies.permissionsdispatcher) {
+    api(fastdroid_dependencies.permissionsdispatcher) {
         exclude module: "support-v13"
     }
 
 
-    api rootProject.ext.dependencies.rxjava2
-    api rootProject.ext.dependencies.rxjava2_android
-    api rootProject.ext.dependencies.rxlifecycle2
-    api rootProject.ext.dependencies.rxlifecycle2_components
+    api fastdroid_dependencies.rxjava2
+    api fastdroid_dependencies.rxjava2_android
+    api fastdroid_dependencies.rxlifecycle2
+    api fastdroid_dependencies.rxlifecycle2_components
 
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    annotationProcessor rootProject.ext.dependencies.permissionsdispatcher_processor
+    annotationProcessor fastdroid_dependencies.permissionsdispatcher_processor
 }

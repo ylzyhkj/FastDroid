@@ -1,5 +1,5 @@
 ext {
-    android = [
+    fastdroid_android = [
             compileSdkVersion: 26,
             buildToolsVersion: "26.0.2",
             minSdkVersion    : 19,
@@ -39,7 +39,7 @@ ext {
     ]
 
 
-    dependencies = [
+    fastdroid_dependencies = [
             appcompatV7               : "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion",
             design                    : "com.android.support:design:$rootProject.supportLibraryVersion",
             cardview                  : "com.android.support:cardview-v7:$rootProject.supportLibraryVersion",

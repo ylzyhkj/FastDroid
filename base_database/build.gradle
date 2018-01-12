@@ -1,18 +1,21 @@
 apply plugin: 'com.android.library'
 apply plugin: 'org.greenrobot.greendao'
 
+def fastdroid_android = rootProject.ext.fastdroid_android
+def fastdroid_dependencies = rootProject.ext.fastdroid_dependencies
+
 android {
-    compileSdkVersion rootProject.ext.android.compileSdkVersion
-    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    compileSdkVersion fastdroid_android.compileSdkVersion
+    buildToolsVersion fastdroid_android.buildToolsVersion
 
 
     defaultConfig {
         multiDexEnabled true
 
-        minSdkVersion rootProject.ext.android.minSdkVersion
-        targetSdkVersion rootProject.ext.android.targetSdkVersion
-        versionCode rootProject.ext.android.versionCode
-        versionName rootProject.ext.android.versionName
+        minSdkVersion fastdroid_android.minSdkVersion
+        targetSdkVersion fastdroid_android.targetSdkVersion
+        versionCode fastdroid_android.versionCode
+        versionName fastdroid_android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         ndk {
@@ -29,8 +32,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility rootProject.ext.android.javaVersion
-        targetCompatibility rootProject.ext.android.javaVersion
+        sourceCompatibility fastdroid_android.javaVersion
+        targetCompatibility fastdroid_android.javaVersion
     }
 
 }
@@ -38,6 +41,6 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-    implementation rootProject.ext.dependencies.greenDao
+    implementation fastdroid_dependencies.greenDao
     implementation project(':base_common')
 }
