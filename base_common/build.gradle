@@ -46,6 +46,11 @@ dependencies {
     }
 
 
+    api rootProject.ext.dependencies.rxjava2
+    api rootProject.ext.dependencies.rxjava2_android
+    api rootProject.ext.dependencies.rxlifecycle2
+    api rootProject.ext.dependencies.rxlifecycle2_components
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
