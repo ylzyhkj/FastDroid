@@ -21,6 +21,12 @@ android {
         versionName fastdroid_android.versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
 
     buildTypes {
@@ -29,12 +35,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    javaCompileOptions {
-        annotationProcessorOptions {
-            arguments = [ moduleName : project.getName() ]
-        }
-    }
-
 }
 
 dependencies {
