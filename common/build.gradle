@@ -1,13 +1,12 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.JAYAndroid'
+group = 'com.github.JAYAndroid'
 
-def fastdroid_android = rootProject.ext.fastdroid_android
-def fastdroid_dependencies = rootProject.ext.fastdroid_dependencies
+def supportLibraryVersion = "26.1.0"
 
 android {
-    compileSdkVersion fastdroid_android.compileSdkVersion
-    buildToolsVersion fastdroid_android.buildToolsVersion
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
 
     compileOptions {
         targetCompatibility fastdroid_android.javaVersion
@@ -36,29 +35,38 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api(fastdroid_dependencies.appcompatV7) {
-        exclude module: "support-annotations"
-    }
+    api "com.android.support:appcompat-v7:${supportLibraryVersion}"
 
-    api(fastdroid_dependencies.support_v4) {
-        exclude module: "support-annotations"
-    }
+    api "com.android.support:support-v4:${supportLibraryVersion}"
 
-    api fastdroid_dependencies.annotations
+    api "com.android.support:design:${supportLibraryVersion}"
 
-    api(fastdroid_dependencies.permissionsdispatcher) {
-        exclude module: "support-v13"
-    }
+    api "com.android.support:support-annotations:${supportLibraryVersion}"
 
+    api "com.github.hotchemi:permissionsdispatcher:2.0.4"
+    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:2.0.4"
 
-    api fastdroid_dependencies.rxjava2
-    api fastdroid_dependencies.rxjava2_android
-    api fastdroid_dependencies.rxlifecycle2
-    api fastdroid_dependencies.rxlifecycle2_components
+    api "com.android.support:recyclerview-v7:${supportLibraryVersion}"
+    api "org.greenrobot:eventbus:3.0.0"
+    api "com.google.code.gson:gson:2.8.0"
+
+    api "com.jakewharton:butterknife:8.8.0"
+    api "com.jakewharton:butterknife-compiler:8.8.0"
+    api "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+
+    api "io.reactivex.rxjava2:rxjava:2.1.1"
+    api "io.reactivex.rxjava2:rxandroid:2.0.1"
+    api "com.trello.rxlifecycle2:rxlifecycle:2.1.0"
+    api "com.trello.rxlifecycle2:rxlifecycle-components:2.1.0"
+
+    api "com.android.support:multidex:1.0.2"
+    //路由通讯
+    api "com.alibaba:arouter-api:1.2.2"
+    api "com.alibaba:arouter-compiler:1.1.3"
 
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    annotationProcessor fastdroid_dependencies.permissionsdispatcher_processor
+
 }

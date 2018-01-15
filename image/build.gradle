@@ -1,10 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.JAYAndroid'
 
 def fastdroid_android = rootProject.ext.fastdroid_android
-def fastdroid_dependencies = rootProject.ext.fastdroid_dependencies
 
 android {
     compileSdkVersion fastdroid_android.compileSdkVersion
@@ -39,8 +37,8 @@ android {
     }
 
 }
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api "com.github.bumptech.glide:glide:4.2.0"
     implementation project(':common')
 }

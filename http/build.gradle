@@ -1,10 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'org.greenrobot.greendao'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.JAYAndroid'
+group = 'com.github.JAYAndroid'
 
 def fastdroid_android = rootProject.ext.fastdroid_android
-def fastdroid_dependencies = rootProject.ext.fastdroid_dependencies
 
 android {
     compileSdkVersion fastdroid_android.compileSdkVersion
@@ -43,4 +41,10 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':common')
+
+    api "com.squareup.retrofit2:retrofit:2.3.0"
+    api "com.squareup.okhttp3:okhttp:3.9.0"
+
+    api "com.squareup.retrofit2:converter-gson:2.3.0"
+    api "com.squareup.retrofit2:converter-scalars:2.3.0"
 }
