@@ -8,13 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.trello.rxlifecycle2.components.support.RxFragment;
 import com.ylz.ehui.ui.mvp.presenter.BasePresenter;
 import com.ylz.ehui.ui.proxy.LogicProxy;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.Observable;
 
-public abstract class BaseFragment extends Fragment implements BaseView {
+public abstract class BaseFragment extends RxFragment implements BaseView {
 
     protected BasePresenter mPresenter;
     protected View rootView;
@@ -58,6 +60,10 @@ public abstract class BaseFragment extends Fragment implements BaseView {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         onInitData2Remote();
+    }
+
+    protected <T> void bindToLifecycle(Observable<T> observable) {
+        observable.compose(this.<T>bindToLifecycle());
     }
 
     //获得该页面的实例

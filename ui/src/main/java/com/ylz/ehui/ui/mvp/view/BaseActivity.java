@@ -5,13 +5,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.ylz.ehui.ui.mvp.presenter.BasePresenter;
 import com.ylz.ehui.ui.proxy.LogicProxy;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.Observable;
 
-public abstract class BaseActivity extends AppCompatActivity implements BaseView {
+public abstract class BaseActivity extends RxAppCompatActivity implements BaseView {
 
     protected BasePresenter mPresenter;
     private Unbinder bind;
@@ -54,6 +56,10 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
         if (mPresenter != null && !mPresenter.isViewBind()) {
             LogicProxy.getInstance().bind(getLogicClazz(), this);
         }
+    }
+
+    protected <T> void bindToLifecycle(Observable<T> observable) {
+        observable.compose(this.<T>bindToLifecycle());
     }
 
     @Override
