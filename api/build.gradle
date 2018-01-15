@@ -23,11 +23,6 @@ android {
             abiFilters 'armeabi', 'armeabi-v7a'
         }
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
-            }
-        }
     }
 
     buildTypes {
@@ -45,9 +40,9 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation project(':database')
-    implementation project(':utils')
-    implementation project(':ui')
-    implementation project(':image')
-    implementation project(':http')
+    api project(':database')
+    api project(':utils')
+    api project(':ui')
+    api project(':image')
+    api project(':http')
 }
