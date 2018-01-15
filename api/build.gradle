@@ -35,13 +35,6 @@ android {
         sourceCompatibility fastdroid_android.javaVersion
         targetCompatibility fastdroid_android.javaVersion
     }
-
-    javaCompileOptions {
-        annotationProcessorOptions {
-            arguments = [ moduleName : project.getName() ]
-        }
-    }
-
 }
 
 dependencies {
