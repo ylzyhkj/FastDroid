@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.JAYAndroid'
+
+group='com.github.JAYAndroid'
 
 def supportLibraryVersion = "26.1.0"
 
