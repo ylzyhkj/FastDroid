@@ -2,7 +2,6 @@ package com.ylz.ehui.ui.mvp.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -13,9 +12,9 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import io.reactivex.Observable;
 
-public abstract class BaseActivity extends RxAppCompatActivity implements BaseView {
+public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatActivity implements BaseView {
 
-    protected BasePresenter mPresenter;
+    private BasePresenter mPresenter;
     private Unbinder bind;
 
     protected abstract int getLayoutResource();
@@ -29,6 +28,14 @@ public abstract class BaseActivity extends RxAppCompatActivity implements BaseVi
     protected void onInitData2Remote() {
         if (getLogicClazz() != null)
             mPresenter = getLogicImpl();
+    }
+
+    protected T getPresenter() {
+        if (mPresenter != null) {
+            return (T) mPresenter;
+        }
+
+        return null;
     }
 
     @Override

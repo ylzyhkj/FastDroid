@@ -3,7 +3,6 @@ package com.ylz.ehui.ui.mvp.view;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import io.reactivex.Observable;
 
-public abstract class BaseFragment extends RxFragment implements BaseView {
+public abstract class BaseFragment<T extends BasePresenter> extends RxFragment implements BaseView {
 
     protected BasePresenter mPresenter;
     protected View rootView;
@@ -34,6 +33,14 @@ public abstract class BaseFragment extends RxFragment implements BaseView {
     protected void onInitData2Remote() {
         if (getLogicClazz() != null)
             mPresenter = getLogicImpl();
+    }
+
+    protected T getPresenter() {
+        if (mPresenter != null) {
+            return (T) mPresenter;
+        }
+
+        return null;
     }
 
     @Nullable
