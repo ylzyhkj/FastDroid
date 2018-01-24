@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.Window;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
+import com.ylz.ehui.ui.manager.AppManager;
 import com.ylz.ehui.ui.mvp.presenter.BasePresenter;
 import com.ylz.ehui.ui.proxy.LogicProxy;
 
@@ -47,6 +48,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayoutResource());
+        AppManager.getInstance().addActivity(this);
         bind = ButterKnife.bind(this);
         this.onInitialization(savedInstanceState);
         this.onInitData2Remote();
