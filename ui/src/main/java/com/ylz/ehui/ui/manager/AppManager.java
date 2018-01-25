@@ -3,6 +3,7 @@ package com.ylz.ehui.ui.manager;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 
 import java.util.Stack;
@@ -58,11 +59,11 @@ public class AppManager {
             return;
         }
 
-        if (!activity.isFinishing()) {
-            activity.finish();
-        }
-
         container.remove(activity);
+    }
+
+    public void finishActivity(@NonNull FragmentActivity activity) {
+        activity.finish();
     }
 
     /**

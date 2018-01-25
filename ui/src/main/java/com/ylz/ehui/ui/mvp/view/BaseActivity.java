@@ -75,6 +75,10 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
                 .getChildAt(0);
     }
 
+    protected void doBack() {
+        AppManager.getInstance().finishActivity(this);
+    }
+
     private void checkResource() {
         if (getLayoutResource() == 0) {
             throw new RuntimeException("getLayoutResource()需要返回有效的layout id");
@@ -89,7 +93,10 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
         }
 
         LogicProxy.getInstance().unbind(getLogicClazz(), this);
-        if (mPresenter != null)
+        if (mPresenter != null) {
             mPresenter.detachView();
+        }
+
+        AppManager.getInstance().removeActivity(this);
     }
 }
