@@ -2,6 +2,7 @@ package com.ylz.ehui.ui.mvp.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.ViewGroup;
 import android.view.Window;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -41,10 +42,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        if (getLayoutResource() == 0) {
-            throw new RuntimeException("getLayoutResource()需要返回有效的layout id");
-        }
-
+        checkResource();
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(getLayoutResource());
@@ -69,6 +67,18 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
 
     protected <T> void bindToLifecycle(Observable<T> observable) {
         observable.compose(this.<T>bindToLifecycle());
+    }
+
+    protected ViewGroup getRootView() {
+        checkResource();
+        return (ViewGroup) ((ViewGroup) findViewById(android.R.id.content))
+                .getChildAt(0);
+    }
+
+    private void checkResource() {
+        if (getLayoutResource() == 0) {
+            throw new RuntimeException("getLayoutResource()需要返回有效的layout id");
+        }
     }
 
     @Override
