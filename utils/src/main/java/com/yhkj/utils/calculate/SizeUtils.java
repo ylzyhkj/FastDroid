@@ -1,11 +1,11 @@
-package com.ylz.ehui.utils.calculate;
+package com.yhkj.utils.calculate;
 
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.ylz.ehui.utils.Utils;
+import com.yhkj.utils.Utils;
 
 /**
  * <pre>

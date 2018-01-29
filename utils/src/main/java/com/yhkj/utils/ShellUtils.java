@@ -1,6 +1,6 @@
-package com.ylz.ehui.utils;
+package com.yhkj.utils;
 
-import com.ylz.ehui.utils.stream.CloseUtils;
+import com.yhkj.utils.stream.CloseUtils;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

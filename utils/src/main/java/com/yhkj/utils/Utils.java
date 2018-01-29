@@ -1,15 +1,8 @@
-package com.ylz.ehui.utils;
+package com.yhkj.utils;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.Application;
-import android.app.Application.ActivityLifecycleCallbacks;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-
-import java.lang.ref.WeakReference;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * <pre>

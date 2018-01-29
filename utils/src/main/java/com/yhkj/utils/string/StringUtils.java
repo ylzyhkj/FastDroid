@@ -1,4 +1,4 @@
-package com.ylz.ehui.utils.string;
+package com.yhkj.utils.string;
 
 /**
  * <pre>

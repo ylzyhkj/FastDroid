@@ -1,11 +1,11 @@
-package com.ylz.ehui.utils.device;
+package com.yhkj.utils.device;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.util.DisplayMetrics;
 
-import com.ylz.ehui.utils.Utils;
+import com.yhkj.utils.Utils;
 
 /********************
  * 作者：yms

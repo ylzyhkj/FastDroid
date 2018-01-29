@@ -1,11 +1,11 @@
-package com.ylz.ehui.utils.save;
+package com.yhkj.utils.save;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.v4.util.SimpleArrayMap;
 
-import com.ylz.ehui.utils.Utils;
-import com.ylz.ehui.utils.string.StringUtils;
+import com.yhkj.utils.Utils;
+import com.yhkj.utils.string.StringUtils;
 
 import java.util.Map;
 
