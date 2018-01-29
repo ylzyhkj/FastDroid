@@ -1,4 +1,4 @@
-package com.ylz.ehui.utils;
+package com.ylz.ehui.utils.stream;
 
 import java.io.Closeable;
 import java.io.IOException;

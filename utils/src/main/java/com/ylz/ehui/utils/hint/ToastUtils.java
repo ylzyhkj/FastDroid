@@ -1,4 +1,4 @@
-package com.ylz.ehui.utils;
+package com.ylz.ehui.utils.hint;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -20,6 +20,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.ylz.ehui.utils.Utils;
 
 import java.lang.ref.WeakReference;
 

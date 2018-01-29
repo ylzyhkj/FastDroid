@@ -1,4 +1,4 @@
-package com.ylz.ehui.utils;
+package com.ylz.ehui.utils.encrypt;
 
 import android.os.Build;
 import android.text.Html;

@@ -1,4 +1,4 @@
-package com.ylz.ehui.utils;
+package com.ylz.ehui.utils.hint;
 
 import android.annotation.SuppressLint;
 import android.content.pm.PackageInfo;
@@ -8,6 +8,8 @@ import android.os.Environment;
 import android.support.annotation.IntDef;
 import android.support.annotation.IntRange;
 import android.util.Log;
+
+import com.ylz.ehui.utils.Utils;
 
 import org.json.JSONArray;
 import org.json.JSONException;

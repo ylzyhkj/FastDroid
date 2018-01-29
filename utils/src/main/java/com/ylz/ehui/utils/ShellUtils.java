@@ -1,5 +1,7 @@
 package com.ylz.ehui.utils;
 
+import com.ylz.ehui.utils.stream.CloseUtils;
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;

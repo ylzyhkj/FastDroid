@@ -1,4 +1,4 @@
-package com.ylz.ehui.utils;
+package com.ylz.ehui.utils.net;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,6 +8,9 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+
+import com.ylz.ehui.utils.ShellUtils;
+import com.ylz.ehui.utils.Utils;
 
 import java.lang.reflect.Method;
 import java.net.InetAddress;

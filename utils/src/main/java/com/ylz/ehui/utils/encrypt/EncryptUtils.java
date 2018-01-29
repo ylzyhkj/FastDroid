@@ -1,6 +1,8 @@
-package com.ylz.ehui.utils;
+package com.ylz.ehui.utils.encrypt;
 
 import android.util.Base64;
+
+import com.ylz.ehui.utils.stream.CloseUtils;
 
 import java.io.File;
 import java.io.FileInputStream;
